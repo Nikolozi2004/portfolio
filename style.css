@@ -1,0 +1,625 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+}
+
+.scroll-watcher {
+    position: fixed;
+    width: 100%;
+    height: 5px;
+    background-color: #0a3049;
+    bottom: 0;
+    z-index: 20;
+    scale: 0 1;
+    animation: scrollwatcher linear;
+    animation-timeline: scroll();
+
+}
+
+/* header_about */
+
+#header_about {
+    /* background: linear-gradient(45deg, #208872, #717485, #94aec9, #0a3049); */
+    /* background: linear-gradient(45deg, #ffffff, #481E14, #9B3922, #F2613F); */
+    /* background: linear-gradient(45deg, #F5F7F8, #F4CE14, #495E57, #45474B); */
+    background: linear-gradient(45deg, #222831, #393E46, #00ADB5, #EEEEEE);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    overflow: hidden;
+    scroll-snap-align: center;
+    z-index: 50 !important;
+    position: relative;
+}
+
+/* Header */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    height: 20vh;
+    animation: fade-up 1.35s;
+}
+
+
+
+.logo_svg {
+    border-radius: 14px;
+    margin-top: 18px;
+    margin-left: 20px;
+    background: linear-gradient(45deg, #208872, #717485, #94aec9, #0a3049);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: 40;
+}
+
+.logo_svg:hover {
+    background: linear-gradient(45deg, #8a9794, #6c6f81, #1b8daa, #677985);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+}
+
+.list_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    margin-top: 4px;
+}
+
+.list {
+    list-style-type: none;
+    list-style: none;
+
+}
+
+.list_link {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: robotoblack;
+    font-size: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: text-shadow 0.2s, border-bottom 0.2s, color 0.5s;
+}
+
+.list_link:hover {
+    border-bottom: solid 1px #fff;
+    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.7);
+    color: #5faeb3;
+}
+
+
+
+
+/* Sections */
+
+/* Intro */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 100%;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+.intro_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.self {
+    margin-bottom: 21px;
+    border-radius: 13px;
+    width: 30%;
+}
+
+.intro_up {
+    display: flex;
+}
+
+.intro_text-h {
+    margin-right: 5px;
+    font-size: 2.8rem;
+    font-family: roboto;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); */
+    text-shadow: 61px 39px 7px rgba(0, 0, 0, 0.3);
+    animation: fade-up 1s;
+    color: #dbdbdb;
+}
+
+.ab-clr {
+    background: linear-gradient(to right,
+            #7953cd 20%,
+            #00affa 30%,
+            #0190cd 70%,
+            #764ada 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+
+.down-arrow-intro {
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.gotoabout {
+    position: absolute;
+    bottom: 5%;
+}
+
+.goabout:hover {
+    fill: #4f5b5c;
+}
+
+/* About */
+
+#about {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: exit;
+    overflow: hidden;
+    background: linear-gradient(180deg, #222831, #393E46, #00ADB5, #EEEEEE);
+
+}
+
+.about-wrapper {
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 80%;
+    height: 75vh;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-title {
+    width: 100%;
+    border-bottom: solid 2px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: futura;
+    font-size: 2.5rem;
+    height: 20%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.about-text-wrapper {
+    height: 80%;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.abtw {
+    font-size: 2rem;
+    font-family: futura;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* SKILLS */
+
+
+
+
+#skills {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+    background-color: #e9e9e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.skills_wrapper {
+    border: solid black 2px;
+    width: 85%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inoutwrap {
+    width: 78%;
+    height: 83%;
+    display: flex;
+}
+
+.inwrap {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.out {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Smooth transition */
+}
+
+.inwrap .stack:hover+.outwrap .out {
+    display: block;
+    opacity: 1;
+}
+
+.stack {
+    height: 33%;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.outwrap {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack.hovered {
+    background-color: lightblue;
+}
+
+
+.singlecontfront {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+    width: 92%;
+}
+
+.frontcontclassimg {
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+}
+
+.textcontsingle {
+    font-size: 25px;
+    font-family: roboto;
+    margin-right: 10px;
+}
+
+
+.wrapoutput {
+    width: 100%;
+    height: 100%;
+}
+
+.containdisplaysk {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+
+
+
+
+
+/* PROJECTS */
+
+
+
+#projects {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects_wrapper {
+    width: 90%;
+    height: 90%;
+    border: solid black 2px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.project {
+    border: solid 2px black;
+    width: 49%;
+    height: 60%;
+    margin-bottom: 10px;
+
+}
+
+
+.project_picture {
+    border: solid 1px yellow;
+    width: 100%;
+    height: 60%;
+}
+
+.project_description {
+    width: 100%;
+    height: 40%;
+    border: solid 1px rgb(141, 52, 52);
+}
+
+
+#contact {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+    background-color: #1f4949;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.form_container {
+    height: 75%;
+    width: 50%;
+    border: #222831 solid 3px;
+    display: flex;justify-content: center;align-items: center;flex-direction: column;
+    overflow: auto;
+}
+
+.formdv {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    width: 80%;
+    height: 5%;
+    border: none;
+    border-inline: none;
+    margin: 6px;
+}
+textarea {
+    overflow: auto;
+}
+
+.contact_info {
+    width: 25%;
+    height: 50%;
+    border: #0a3049 solid 2px;
+}
+
+
+
+
+
+.scrolled-class {
+    opacity: 1 !important;
+    z-index: 30 !important;
+}
+
+.nav {
+    height: 51px;
+    width: 32.3%;
+    top: 0;
+    right: 0;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.navcolor {
+    color: #00ADB5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* keyframes */
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translate(-30px) scale(0.9);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translate(0px) scale(1);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes scrollwatcher {
+    to {
+        scale: 1 1;
+    }
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+
+/* Fonts */
+
+@font-face {
+    font-family: robotobold;
+    src: url(./fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: robotoblack;
+    src: url(./fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+    font-family: latoreg;
+    src: url(./fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: latobold;
+    src: url(./fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: futura;
+    src: url(./fonts/FUTURA65MEDIUM.TTF);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: about;
+    src: url(./fonts/Jersey10-Regular.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(./fonts/BebasNeue-Regular.ttf);
+}
+
+/* CSS for scrollbar */
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #ca1414;
+}
+
+/* Handle (thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
