@@ -84,8 +84,6 @@ stackItems.forEach(function (item) {
 });
 
 
-
-
 const form = document.getElementById('form');
 const result = document.getElementById('result');
 

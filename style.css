@@ -421,7 +421,6 @@ body {
     height: 75%;
     width: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
     overflow: auto;
 }
 
@@ -447,6 +446,7 @@ input {
     align-items: center;
     font-size: large;
     font-family: sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 textarea {
@@ -457,13 +457,56 @@ textarea {
     margin-bottom: 20px;
     font-family: sans-serif;
     font-size: medium;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 25%;
-    height: 50%;
-    border: #0a3049 solid 2px;
+    height: 75%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.contact_info_header {
+    font-family: roboto;
+    font-size: large;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.location {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    font-family: roboto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.social_links {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    font-family: roboto;
+}
+
+
+
+
+
 
 .intouch {
     width: 100%;
@@ -487,6 +530,20 @@ textarea {
     margin-bottom: 5px;
     font-family: sans-serif;
 }
+
+
+.social_links_container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
 
 
 .scrolled-class {
@@ -521,7 +578,9 @@ textarea {
     color: #00ADB5;
 }
 
-
+.contain_link {
+    width: 100%;
+}
 
 
 
