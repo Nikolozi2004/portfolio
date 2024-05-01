@@ -170,7 +170,7 @@ body {
 
 .gotoabout {
     position: absolute;
-    bottom: 5%;
+    bottom: 1.8%;
 }
 
 .goabout:hover {
@@ -180,6 +180,7 @@ body {
 /* About */
 
 #about {
+    position: relative;
     scroll-snap-align: center;
     height: 100vh;
     width: 100%;
@@ -249,6 +250,7 @@ body {
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 
 
@@ -351,9 +353,6 @@ body {
 
 
 
-
-
-
 /* PROJECTS */
 
 
@@ -367,6 +366,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .projects_wrapper {
@@ -404,6 +404,8 @@ body {
     border: solid 1px rgb(141, 52, 52);
 }
 
+
+/* CONTACT */
 
 #contact {
     height: 100vh;
@@ -461,6 +463,7 @@ textarea {
 }
 
 .contact_info {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -497,7 +500,7 @@ textarea {
     width: 100%;
     height: 60%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-end;
     flex-direction: column;
     font-family: roboto;
@@ -534,17 +537,60 @@ textarea {
 
 .social_links_container {
     width: 100%;
-    height: 20%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in;
+}
+
+.social_links_container:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 
 
+.gitlogo {
+    height: 60%;
+    width: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./img/social/github-mark.png');
+}
 
+.linkedinlogo {
+    height: 60%;
+    width: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./img/social/LI-In-Bug.png');
+}
 
+.maillogo {
+    height: 60%;
+    width: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./img/social/email.png');
+}
 
+.phonelogo {
+    height: 60%;
+    width: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./img/social/phone.png');
+}
+
+.unlink_container {
+    width: 100%;
+    height: 20%;
+}
 
 .scrolled-class {
     opacity: 1 !important;
@@ -580,6 +626,8 @@ textarea {
 
 .contain_link {
     width: 100%;
+    height: 20%;
+    text-decoration: none;
 }
 
 
