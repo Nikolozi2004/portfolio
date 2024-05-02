@@ -150,9 +150,8 @@ body {
 }
 
 .list_link:hover {
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 3px #fff;
     text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.7);
-    color: #5faeb3;
 }
 
 
@@ -839,4 +838,22 @@ textarea {
 @font-face {
     font-family: bebas;
     src: url(./fonts/BebasNeue-Regular.ttf);
+}
+
+
+
+#circle {
+    width: 15px;
+    height: 15px;
+    background-color: #beb421;
+    border-radius: 50%;
+    position: absolute;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 10000;
+    /* Allows mouse events to pass through the circle */
+}
+
+#circle:hover {
+    transform: scale(1.2);
 }

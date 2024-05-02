@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Add smooth scrolling to all links with hashes
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const target = document.getElementById(targetId);
 
             if (target) {
-                // Smooth scroll to the target element
                 window.scrollTo({
                     top: target.offsetTop,
                     behavior: 'smooth'
@@ -49,28 +47,24 @@ window.addEventListener('scroll', function () {
 
 
 
-var stackItems = document.querySelectorAll('.stack');
-var outItems = document.querySelectorAll('.out');
+let stackItems = document.querySelectorAll('.stack');
+let outItems = document.querySelectorAll('.out');
 
-// Function to handle hover behavior
 function handleHover(event) {
-    // Remove 'hovered' class from previously hovered element
-    var prevHovered = document.querySelector('.hovered');
+    let prevHovered = document.querySelector('.hovered');
     if (prevHovered) {
         prevHovered.classList.remove('hovered');
     }
 
-    // Add 'hovered' class to the currently hovered element
     event.target.classList.add('hovered');
 
-    // Show the corresponding out item
-    var index = Array.from(this.parentNode.children).indexOf(this);
+    let index = Array.from(this.parentNode.children).indexOf(this);
     outItems.forEach(function (item, i) {
         if (i === index) {
             item.style.display = 'block';
             setTimeout(function () {
                 item.style.opacity = '1';
-            }, 50); // Delay to ensure display is updated before opacity transition starts
+            }, 50); 
         } else {
             item.style.display = 'none';
             item.style.opacity = '0';
@@ -78,7 +72,6 @@ function handleHover(event) {
     });
 }
 
-// Attach event listeners to stack elements
 stackItems.forEach(function (item) {
     item.addEventListener('mouseover', handleHover);
 });
@@ -121,4 +114,32 @@ form.addEventListener('submit', function (e) {
                 result.style.display = "none";
             }, 3000);
         });
+});
+
+let circle = document.getElementById('circle');
+
+document.addEventListener('mousemove', function (e) {
+
+    let mouseX = e.clientX;
+    let mouseY = e.clientY;
+
+    circle.style.left = mouseX + 'px';
+    circle.style.top = mouseY + 'px';
+
+    let hue = mouseX / window.innerWidth * 360;
+    let saturation = mouseY / window.innerHeight * 100;
+    circle.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, 50%)';
+});
+
+
+document.addEventListener('mousemove', function (e) {
+    circle.style.left = e.clientX - circle.offsetWidth / 2 + 'px';
+    circle.style.top = e.clientY - circle.offsetHeight / 2 + 'px';
+});
+
+document.addEventListener('mousemove', function (e) {
+    let x = e.clientX;
+    let y = e.clientY + window.pageYOffset;
+    circle.style.left = x - circle.offsetWidth / 2 + 'px';
+    circle.style.top = y - circle.offsetHeight / 2 + 'px';
 });
