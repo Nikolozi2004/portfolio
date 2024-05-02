@@ -64,7 +64,7 @@ function handleHover(event) {
             item.style.display = 'block';
             setTimeout(function () {
                 item.style.opacity = '1';
-            }, 50); 
+            }, 50);
         } else {
             item.style.display = 'none';
             item.style.opacity = '0';
@@ -142,4 +142,51 @@ document.addEventListener('mousemove', function (e) {
     let y = e.clientY + window.pageYOffset;
     circle.style.left = x - circle.offsetWidth / 2 + 'px';
     circle.style.top = y - circle.offsetHeight / 2 + 'px';
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    let modalTriggers = document.querySelectorAll('.modalTrigger');
+
+    // Function to open the modal
+    function openModal(modalId) {
+        let modal = document.getElementById(modalId);
+        modal.style.display = "block";
+        overlay.style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        let modal = document.getElementById(modalId);
+        modal.style.display = "none";
+        overlay.style.display = "none";
+    }
+
+    modalTriggers.forEach(function (trigger, index) {
+        trigger.addEventListener('click', function () {
+            let modalId = 'myModal' + (index + 1);
+            openModal(modalId);
+        });
+    });
+
+    
+    document.querySelectorAll('.close').forEach(function (closeBtn, index) {
+        closeBtn.addEventListener('click', function () {
+            let modalId = 'myModal' + (index + 1);
+            closeModal(modalId);
+        });
+    });
+
+    let overlay = document.getElementById('overlay');
+    overlay.addEventListener('click', function (event) {
+        if (event.target === overlay) {
+            document.querySelectorAll('.modal').forEach(function (modal, index) {
+                let modalId = 'myModal' + (index + 1);
+                if (modal.style.display === "block") {
+                    closeModal(modalId);
+                }
+            });
+        }
+    });
 });
