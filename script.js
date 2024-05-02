@@ -116,33 +116,33 @@ form.addEventListener('submit', function (e) {
         });
 });
 
-let circle = document.getElementById('circle');
+// let circle = document.getElementById('circle');
 
-document.addEventListener('mousemove', function (e) {
+// document.addEventListener('mousemove', function (e) {
 
-    let mouseX = e.clientX;
-    let mouseY = e.clientY;
+//     let mouseX = e.clientX;
+//     let mouseY = e.clientY;
 
-    circle.style.left = mouseX + 'px';
-    circle.style.top = mouseY + 'px';
+//     circle.style.left = mouseX + 'px';
+//     circle.style.top = mouseY + 'px';
 
-    let hue = mouseX / window.innerWidth * 360;
-    let saturation = mouseY / window.innerHeight * 100;
-    circle.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, 50%)';
-});
+//     let hue = mouseX / window.innerWidth * 360;
+//     let saturation = mouseY / window.innerHeight * 100;
+//     circle.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, 50%)';
+// });
 
 
-document.addEventListener('mousemove', function (e) {
-    circle.style.left = e.clientX - circle.offsetWidth / 2 + 'px';
-    circle.style.top = e.clientY - circle.offsetHeight / 2 + 'px';
-});
+// document.addEventListener('mousemove', function (e) {
+//     circle.style.left = e.clientX - circle.offsetWidth / 2 + 'px';
+//     circle.style.top = e.clientY - circle.offsetHeight / 2 + 'px';
+// });
 
-document.addEventListener('mousemove', function (e) {
-    let x = e.clientX;
-    let y = e.clientY + window.pageYOffset;
-    circle.style.left = x - circle.offsetWidth / 2 + 'px';
-    circle.style.top = y - circle.offsetHeight / 2 + 'px';
-});
+// document.addEventListener('mousemove', function (e) {
+//     let x = e.clientX;
+//     let y = e.clientY + window.pageYOffset;
+//     circle.style.left = x - circle.offsetWidth / 2 + 'px';
+//     circle.style.top = y - circle.offsetHeight / 2 + 'px';
+// });
 
 
 

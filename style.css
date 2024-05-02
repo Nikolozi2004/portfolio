@@ -352,7 +352,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 3rem;
     font-family: sans-serif;
     cursor: pointer;
 }
@@ -375,7 +375,7 @@ body {
 .singlecontfront {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 19.2%;
     width: 92%;
     box-shadow: 21px 8px 8px rgba(0, 0, 0, 0.1);
@@ -398,9 +398,10 @@ body {
 
 .textcontsingle {
     margin-left: 10px;
-    font-size: 25px;
+    font-size: 1.563rem;
     font-family: roboto;
     margin-right: 10px;
+    text-align: center;
 }
 
 
@@ -927,4 +928,87 @@ textarea {
 
 .modal-open {
     overflow: hidden;
+}
+
+
+
+
+
+
+/* MOBILE/1024 */
+
+.burger_nav {
+    display: none;
+}
+
+/* intro */
+
+@media screen and (max-width: 1024px) {
+    .list_container {
+        display: none;
+    }
+    .burger_nav {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .intro_text-h {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .intro_text-h {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .intro_text-h {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    .intro_text-h {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .intro_text-h {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .intro_text-h {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .intro_text-h {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Skills */ 
+
+
+@media screen and (max-width: 1024px) {
+    .stack {
+        font-size: 2.6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stack {
+        font-size: 2.2rem;
+    }
+    .textcontsingle {
+        font-size: 1.4rem;
+    }
 }
