@@ -146,43 +146,93 @@ document.addEventListener('mousemove', function (e) {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
-    let modalTriggers = document.querySelectorAll('.modalTrigger');
+//     let modalTriggers = document.querySelectorAll('.modalTrigger');
+
+//     // Function to open the modal
+//     function openModal(modalId) {
+//         let modal = document.getElementById(modalId);
+//         modal.style.display = "block";
+//         overlay.style.display = "block";
+//     }
+
+//     function closeModal(modalId) {
+//         let modal = document.getElementById(modalId);
+//         modal.style.display = "none";
+//         overlay.style.display = "none";
+//     }
+
+//     modalTriggers.forEach(function (trigger, index) {
+//         trigger.addEventListener('click', function () {
+//             let modalId = 'myModal' + (index + 1);
+//             openModal(modalId);
+//         });
+//     });
+
+
+//     document.querySelectorAll('.close').forEach(function (closeBtn, index) {
+//         closeBtn.addEventListener('click', function () {
+//             let modalId = 'myModal' + (index + 1);
+//             closeModal(modalId);
+//         });
+//     });
+
+//     let overlay = document.getElementById('overlay');
+//     overlay.addEventListener('click', function (event) {
+//         if (event.target === overlay) {
+//             document.querySelectorAll('.modal').forEach(function (modal, index) {
+//                 let modalId = 'myModal' + (index + 1);
+//                 if (modal.style.display === "block") {
+//                     closeModal(modalId);
+//                 }
+//             });
+//         }
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all elements with class "modalTrigger"
+    var modalTriggers = document.querySelectorAll('.modalTrigger');
 
     // Function to open the modal
     function openModal(modalId) {
-        let modal = document.getElementById(modalId);
+        var modal = document.getElementById(modalId);
         modal.style.display = "block";
         overlay.style.display = "block";
+        document.body.classList.add('modal-open'); // Add class to body to restrict scrolling
     }
 
+    // Function to close the modal
     function closeModal(modalId) {
-        let modal = document.getElementById(modalId);
+        var modal = document.getElementById(modalId);
         modal.style.display = "none";
         overlay.style.display = "none";
+        document.body.classList.remove('modal-open'); // Remove class to allow scrolling
     }
 
+    // Add click event listener to each modalTrigger
     modalTriggers.forEach(function (trigger, index) {
         trigger.addEventListener('click', function () {
-            let modalId = 'myModal' + (index + 1);
+            var modalId = 'myModal' + (index + 1);
             openModal(modalId);
         });
     });
 
-    
+    // Add click event listener to close button
     document.querySelectorAll('.close').forEach(function (closeBtn, index) {
         closeBtn.addEventListener('click', function () {
-            let modalId = 'myModal' + (index + 1);
+            var modalId = 'myModal' + (index + 1);
             closeModal(modalId);
         });
     });
 
-    let overlay = document.getElementById('overlay');
+    // Add click event listener to overlay to close modal when clicking outside
+    var overlay = document.getElementById('overlay');
     overlay.addEventListener('click', function (event) {
         if (event.target === overlay) {
             document.querySelectorAll('.modal').forEach(function (modal, index) {
-                let modalId = 'myModal' + (index + 1);
+                var modalId = 'myModal' + (index + 1);
                 if (modal.style.display === "block") {
                     closeModal(modalId);
                 }
