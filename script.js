@@ -16,6 +16,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const hamburgers = document.querySelectorAll('.hamburger');
+const overlay = document.querySelector('.intro_overlay');
+const body = document.body;
+const mobileNav = document.querySelector(".mobile_nav");
+
+hamburgers.forEach(hamburger => {
+    hamburger.addEventListener('click', function () {
+        this.classList.toggle('is-active'); // Toggle class for hamburger
+        overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
+        body.classList.toggle('no-scroll');
+        mobileNav.classList.toggle('mobile_nav_is-active');
+    });
+});
+
+const mobileNavItems = document.querySelectorAll('.mobile_nav_list_item');
+
+mobileNavItems.forEach(navitem => {
+    navitem.addEventListener('click', function () {
+        overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
+        body.classList.toggle('no-scroll');
+        mobileNav.classList.toggle('mobile_nav_is-active');
+        hamburgers.forEach(hamburger => {
+            hamburger.classList.toggle('is-active');
+        });
+    });
+});
+
+
+
+
+// const hamburgers = document.querySelectorAll('.hamburger');
+// const overlay = document.querySelector('.intro_overlay');
+// const body = document.body;
+// const mobileNav = document.querySelector(".mobile_nav");
+
+// hamburgers.forEach(hamburger => {
+//     hamburger.addEventListener('click', function () {
+//         this.classList.toggle('is-active'); // Toggle class for hamburger
+//         overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
+//         body.classList.toggle('no-scroll');
+//         mobileNav.classList.toggle('mobile_nav_is-active');
+//     });
+// });
+
+// const mobileNavItem = document.querySelector('.mobile_nav_list_item');
+
+// mobileNavItem.forEach(navitem => {
+//     navitem.addEventListener('click', function () {
+//         overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
+//         body.classList.toggle('no-scroll');
+//         mobileNav.classList.toggle('mobile_nav_is-active');
+//     });
+// });
 
 window.addEventListener('scroll', function () {
     const targetDiv = document.querySelector('.nav');
