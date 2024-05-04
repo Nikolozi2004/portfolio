@@ -349,11 +349,12 @@ body {
     transition-property: box-shadow;
     transition-duration: 0.3s;
     color: #d4d4d4;
+    background: rgb(44, 69, 85);
 }
 
 .singlecontfront:hover {
     box-shadow: 41px 8px 8px rgb(177, 151, 118);
-    background: linear-gradient(109.6deg, rgb(0 0 0) 11.2%, rgb(255, 158, 27) 91.1%);
+    background: linear-gradient(109.6deg, rgb(19, 30, 37) 11.2%, rgb(255, 158, 27) 91.1%);
 
 }
 
@@ -501,7 +502,7 @@ body {
 .form_container {
     height: 80%;
     width: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 8px 8px rgb(239 236 239 / 13%);
     overflow: auto;
     background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
 }
@@ -743,30 +744,6 @@ textarea {
     height: 20%;
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* keyframes */
 

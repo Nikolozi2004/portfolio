@@ -23,8 +23,8 @@ const mobileNav = document.querySelector(".mobile_nav");
 
 ham.forEach(hamburger => {
     hamburger.addEventListener('click', function () {
-        this.classList.toggle('is-active'); // Toggle class for hamburger
-        overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
+        this.classList.toggle('is-active');
+        overlay.classList.toggle('intro-active-overlay');
         body.classList.toggle('no-scroll');
         mobileNav.classList.toggle('mobile_nav_is-active');
     });
@@ -42,33 +42,6 @@ mobileNavItems.forEach(navitem => {
         });
     });
 });
-
-
-
-
-// const hamburgers = document.querySelectorAll('.hamburger');
-// const overlay = document.querySelector('.intro_overlay');
-// const body = document.body;
-// const mobileNav = document.querySelector(".mobile_nav");
-
-// hamburgers.forEach(hamburger => {
-//     hamburger.addEventListener('click', function () {
-//         this.classList.toggle('is-active'); // Toggle class for hamburger
-//         overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
-//         body.classList.toggle('no-scroll');
-//         mobileNav.classList.toggle('mobile_nav_is-active');
-//     });
-// });
-
-// const mobileNavItem = document.querySelector('.mobile_nav_list_item');
-
-// mobileNavItem.forEach(navitem => {
-//     navitem.addEventListener('click', function () {
-//         overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
-//         body.classList.toggle('no-scroll');
-//         mobileNav.classList.toggle('mobile_nav_is-active');
-//     });
-// });
 
 window.addEventListener('scroll', function () {
     const targetDiv = document.querySelector('.nav');
@@ -172,45 +145,34 @@ form.addEventListener('submit', function (e) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all elements with class "modalTrigger"
-    var modalTriggers = document.querySelectorAll('.modalTrigger');
-
-    // Function to open the modal
+    let modalTriggers = document.querySelectorAll('.modalTrigger');
     function openModal(modalId) {
-        var modal = document.getElementById(modalId);
-        var overlay = document.getElementById('overlay'); // assuming you have an overlay element
+        let modal = document.getElementById(modalId);
+        let overlay = document.getElementById('overlay');
         modal.style.display = "block";
-        modal.offsetHeight; // Trigger reflow to enable transition
+        modal.offsetHeight;
         modal.style.opacity = "1";
         overlay.style.display = "block";
-        document.body.classList.add('modal-open'); // Add class to body to restrict scrolling
+        document.body.classList.add('modal-open');
     }
-
-    // Function to close the modal
     function closeModal(modalId) {
-        var modal = document.getElementById(modalId);
+        let modal = document.getElementById(modalId);
         modal.style.display = "none";
         overlay.style.display = "none";
-        document.body.classList.remove('modal-open'); // Remove class to allow scrolling
+        document.body.classList.remove('modal-open');
     }
-
-    // Add click event listener to each modalTrigger
     modalTriggers.forEach(function (trigger, index) {
         trigger.addEventListener('click', function () {
-            var modalId = 'myModal' + (index + 1);
+            let modalId = 'myModal' + (index + 1);
             openModal(modalId);
         });
     });
-
-    // Add click event listener to close button
     document.querySelectorAll('.close').forEach(function (closeBtn, index) {
         closeBtn.addEventListener('click', function () {
-            var modalId = 'myModal' + (index + 1);
+            let modalId = 'myModal' + (index + 1);
             closeModal(modalId);
         });
     });
-
-    // Add click event listener to overlay to close modal when clicking outside
     var overlay = document.getElementById('overlay');
     overlay.addEventListener('click', function (event) {
         if (event.target === overlay) {
