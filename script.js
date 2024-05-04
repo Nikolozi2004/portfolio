@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const hamburgers = document.querySelectorAll('.hamburger');
+const ham = document.querySelectorAll('.ham');
 const overlay = document.querySelector('.intro_overlay');
 const body = document.body;
 const mobileNav = document.querySelector(".mobile_nav");
 
-hamburgers.forEach(hamburger => {
+ham.forEach(hamburger => {
     hamburger.addEventListener('click', function () {
         this.classList.toggle('is-active'); // Toggle class for hamburger
         overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
@@ -37,7 +37,7 @@ mobileNavItems.forEach(navitem => {
         overlay.classList.toggle('intro-active-overlay'); // Toggle class for overlay
         body.classList.toggle('no-scroll');
         mobileNav.classList.toggle('mobile_nav_is-active');
-        hamburgers.forEach(hamburger => {
+        ham.forEach(hamburger => {
             hamburger.classList.toggle('is-active');
         });
     });
@@ -169,80 +169,7 @@ form.addEventListener('submit', function (e) {
         });
 });
 
-// let circle = document.getElementById('circle');
 
-// document.addEventListener('mousemove', function (e) {
-
-//     let mouseX = e.clientX;
-//     let mouseY = e.clientY;
-
-//     circle.style.left = mouseX + 'px';
-//     circle.style.top = mouseY + 'px';
-
-//     let hue = mouseX / window.innerWidth * 360;
-//     let saturation = mouseY / window.innerHeight * 100;
-//     circle.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, 50%)';
-// });
-
-
-// document.addEventListener('mousemove', function (e) {
-//     circle.style.left = e.clientX - circle.offsetWidth / 2 + 'px';
-//     circle.style.top = e.clientY - circle.offsetHeight / 2 + 'px';
-// });
-
-// document.addEventListener('mousemove', function (e) {
-//     let x = e.clientX;
-//     let y = e.clientY + window.pageYOffset;
-//     circle.style.left = x - circle.offsetWidth / 2 + 'px';
-//     circle.style.top = y - circle.offsetHeight / 2 + 'px';
-// });
-
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-
-//     let modalTriggers = document.querySelectorAll('.modalTrigger');
-
-//     // Function to open the modal
-//     function openModal(modalId) {
-//         let modal = document.getElementById(modalId);
-//         modal.style.display = "block";
-//         overlay.style.display = "block";
-//     }
-
-//     function closeModal(modalId) {
-//         let modal = document.getElementById(modalId);
-//         modal.style.display = "none";
-//         overlay.style.display = "none";
-//     }
-
-//     modalTriggers.forEach(function (trigger, index) {
-//         trigger.addEventListener('click', function () {
-//             let modalId = 'myModal' + (index + 1);
-//             openModal(modalId);
-//         });
-//     });
-
-
-//     document.querySelectorAll('.close').forEach(function (closeBtn, index) {
-//         closeBtn.addEventListener('click', function () {
-//             let modalId = 'myModal' + (index + 1);
-//             closeModal(modalId);
-//         });
-//     });
-
-//     let overlay = document.getElementById('overlay');
-//     overlay.addEventListener('click', function (event) {
-//         if (event.target === overlay) {
-//             document.querySelectorAll('.modal').forEach(function (modal, index) {
-//                 let modalId = 'myModal' + (index + 1);
-//                 if (modal.style.display === "block") {
-//                     closeModal(modalId);
-//                 }
-//             });
-//         }
-//     });
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
     // Get all elements with class "modalTrigger"
@@ -251,7 +178,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to open the modal
     function openModal(modalId) {
         var modal = document.getElementById(modalId);
+        var overlay = document.getElementById('overlay'); // assuming you have an overlay element
         modal.style.display = "block";
+        modal.offsetHeight; // Trigger reflow to enable transition
+        modal.style.opacity = "1";
         overlay.style.display = "block";
         document.body.classList.add('modal-open'); // Add class to body to restrict scrolling
     }
