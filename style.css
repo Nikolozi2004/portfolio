@@ -495,7 +495,6 @@ body {
     height: 100vh;
     width: 100%;
     scroll-snap-align: center;
-    /* background: linear-gradient(to right, #434343 0%, black 100%); */
     background-color: rgb(19, 30, 37);
     display: flex;
     justify-content: space-evenly;
@@ -1046,6 +1045,37 @@ textarea {
     }
 }
 
+@media screen and (max-width: 640px) {
+    .stack {
+        font-size: 1.9rem;
+    }
+
+    .textcontsingle {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 590px) {
+    .stack {
+        font-size: 1.7rem;
+    }
+
+    .textcontsingle {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .stack {
+        font-size: 1.5rem;
+    }
+
+    .textcontsingle {
+        font-size: 1rem;
+    }
+}
+
+
+
 
 
 
@@ -1053,6 +1083,18 @@ textarea {
 
 
 /* contact mobile */
+
+@media screen and (max-width: 1024px) {
+    textarea {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    textarea {
+        height: 40%;
+    }
+}
 
 @media screen and (max-width: 1000px) {
 
@@ -1070,6 +1112,9 @@ textarea {
 
     .contact_info {
         height: 80%;
+    }
+    .contact_info {
+        width: 40%;
     }
 }
 
@@ -1107,6 +1152,12 @@ textarea {
 
     .formdv {
         height: 100%;
+    }
+}
+@media screen and (max-height: 600px) {
+    textarea {
+        width: 85%;
+        margin-bottom: 0;
     }
 }
 
@@ -1154,7 +1205,7 @@ textarea {
 
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 600px) {
     .form_container {
         width: 55%;
     }
@@ -1164,13 +1215,10 @@ textarea {
     }
 
     input {
-        height: 20%;
+        height: 15%;
         margin: 0.6%;
     }
 }
-
-
-
 
 .mobile_nav {
     position: absolute;
@@ -1225,8 +1273,6 @@ textarea {
     height: 100%;
 }
 
-
-
 .mobile_nav_list_container {
     width: 100%;
     height: 100%;
@@ -1237,7 +1283,6 @@ textarea {
     border: solid 2px;
 
 }
-
 
 .intro_overlay {
     position: fixed;
