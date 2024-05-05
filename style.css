@@ -1084,6 +1084,21 @@ textarea {
 
 /* contact mobile */
 
+@media screen and (max-width: 580px) {
+    #contact {
+        height: 800px;
+        flex-direction: column;
+    }
+    .form_container {
+        width: 85%;
+        height: 115%;
+    }
+    .contact_info {
+        width: 100% !important;
+        box-shadow: 0px 4px 21px rgba(255, 255, 255, 0.5);;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     textarea {
         width: 70%;
@@ -1154,12 +1169,6 @@ textarea {
         height: 100%;
     }
 }
-@media screen and (max-height: 600px) {
-    textarea {
-        width: 85%;
-        margin-bottom: 0;
-    }
-}
 
 @media screen and (max-width: 650px) {
     .contact_info {
@@ -1203,21 +1212,6 @@ textarea {
         width: 100%;
     }
 
-}
-
-@media screen and (max-height: 600px) {
-    .form_container {
-        width: 55%;
-    }
-
-    textarea {
-        height: 30%;
-    }
-
-    input {
-        height: 15%;
-        margin: 0.6%;
-    }
 }
 
 .mobile_nav {
