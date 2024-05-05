@@ -149,11 +149,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function openModal(modalId) {
         let modal = document.getElementById(modalId);
         let overlay = document.getElementById('overlay');
+        console.log(modal)
         modal.style.display = "block";
         modal.offsetHeight;
         modal.style.opacity = "1";
         overlay.style.display = "block";
         document.body.classList.add('modal-open');
+        console.log(modal)
     }
     function closeModal(modalId) {
         let modal = document.getElementById(modalId);
@@ -185,3 +187,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
