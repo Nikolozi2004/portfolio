@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.css">
     <title>NM Portfolio</title>
 </head>
 
@@ -32,6 +33,7 @@
     <div class="scroll-watcher"></div>
 
     <div id="header_about">
+        <canvas id="canvas1"></canvas>
         <div class="logo">
         </div>
         <div class="intro_overlay"></div>
@@ -189,11 +191,57 @@ s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.3
     </section>
 
     <!-- PROJECTS -->
+    <!-- MODAL & OVERLAY -->
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+    <!-- Modal for project 1 -->
+    <div id="myModal1" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal_wrapper">
+            <div class="modal_image"></div>
+            <div class="modal_description">
+                <h1>PROJECT NAME</h1>
+                <h2>TECHNOLOGIES USED</h2>
+                <h2>PROJECT DESCRIPTION</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for project 2 -->
+    <div id="myModal2" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal_wrapper">
+            <div class="modal_image"></div>
+            <div class="modal_description">
+                <h1>PROJECT NAME</h1>
+                <h2>TECHNOLOGIES USED</h2>
+                <h2>PROJECT DESCRIPTION</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for project 3 -->
+    <div id="myModal3" class="modal">
+        <span class="close">
+        </span>
+        <p>This is modal 3.</p>
+        <p>Content for modal 3 goes here...</p>
+    </div>
+    <!-- Modal for project 4 -->
+    <div id="myModal4" class="modal">
+        <span class="close">&times;</span>
+        <p>This is modal 4.</p>
+        <p>Content for modal 4 goes here...</p>
+    </div>
 
     <section id="projects">
         <swiper-container class="mySwiper" effect="cards" grab-cursor="true" navigation="true" class="projects_wrapper">
-            <!-- Overlay -->
-            <div id="overlay" class="overlay"></div>
             <!-- Project 1 -->
             <swiper-slide>
                 <div class="project">
@@ -214,22 +262,6 @@ s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.3
                     </div>
                 </div>
             </swiper-slide>
-            <!-- Modal for project 1 -->
-            <div id="myModal1" class="modal">
-                <span class="close">&times;</span>
-                <div class="modal_wrapper">
-                    <div class="modal_image"></div>
-                    <div class="modal_description">
-                        <h1>PROJECT NAME</h1>
-                        <h2>TECHNOLOGIES USED</h2>
-                        <h2>PROJECT DESCRIPTION</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
             <!-- Project 2 -->
             <swiper-slide>
                 <div class="project">
@@ -249,23 +281,6 @@ s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.3
                     </div>
                 </div>
             </swiper-slide>
-            <!-- Modal for project 2 -->
-            <div id="myModal2" class="modal">
-                <span class="close">&times;</span>
-                <div class="modal_wrapper">
-                    <div class="modal_image"></div>
-                    <div class="modal_description">
-                        <h1>PROJECT NAME</h1>
-                        <h2>TECHNOLOGIES USED</h2>
-                        <h2>PROJECT DESCRIPTION</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Project 3 -->
             <swiper-slide>
                 <div class="project">
@@ -285,16 +300,6 @@ s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.3
                     </div>
                 </div>
             </swiper-slide>
-            <!-- Modal for project 3 -->
-            <div id="myModal3" class="modal">
-                <span class="close">
-
-
-
-                </span>
-                <p>This is modal 3.</p>
-                <p>Content for modal 3 goes here...</p>
-            </div>
             <!-- Project 4 -->
             <swiper-slide>
                 <div class="project">
@@ -314,15 +319,9 @@ s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.3
                     </div>
                 </div>
             </swiper-slide>
-            <!-- Modal for project 4 -->
-            <div id="myModal4" class="modal">
-                <span class="close">&times;</span>
-                <p>This is modal 4.</p>
-                <p>Content for modal 4 goes here...</p>
-            </div>
         </swiper-container>
     </section>
-
+    <!-- PROJECT END -->
 
 
 
@@ -493,9 +492,23 @@ s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.3
             </div>
         </div>
     </section>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js"></script>
     <script src="swiper-element-bundle.min.js"></script>
     <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js"></script>
 </body>
 
 </html>
